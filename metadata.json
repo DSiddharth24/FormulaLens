@@ -1,0 +1,6 @@
+{
+  "name": "FormulaLens",
+  "description": "Interactive visual laboratory for mathematical formulas with real-time parameter manipulation, calculus overlays, and 3D surface graphing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

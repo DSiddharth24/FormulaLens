@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #F7F6F2;
+  --paper-card: #FFFFFF;
+  --paper-hover: #ECEAE4;
+  --paper-border: #D1D9DC;
+  --ink: #1C1D21;
+  --ink-muted: #575E66;
+  --ink-faint: #87929D;
+  --graph-line: #C9D6D9;
+  --graph-major: #9EB0B5;
+  --accent-curve: #2E5F4E;
+  --accent-secondary: #A63D40;
+  --accent-warn: #B8860B;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.font-body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom technical graph paper background pattern */
+.bg-graph-paper {
+  background-color: var(--paper);
+  background-image: 
+    linear-gradient(to right, rgba(201, 214, 217, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(201, 214, 217, 0.45) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-graph-paper-fine {
+  background-color: var(--paper);
+  background-image: 
+    linear-gradient(to right, rgba(201, 214, 217, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(201, 214, 217, 0.3) 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+/* Authentic technical slider styling */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #D9E1E4;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ink);
+  cursor: pointer;
+  border: 2px solid var(--paper);
+  box-shadow: 0 1px 3px rgba(28, 29, 33, 0.25);
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: var(--accent-curve);
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ink);
+  cursor: pointer;
+  border: 2px solid var(--paper);
+  box-shadow: 0 1px 3px rgba(28, 29, 33, 0.25);
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+/* KaTeX custom overrides to ensure Latin Modern crisp rendering */
+.katex-display {
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.katex {
+  font-size: 1.15em;
+  text-rendering: geometricPrecision;
+}
+
+/* Sketched draw-in animation for SVG curves */
+@keyframes sketchCurve {
+  from {
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.sketch-animation {
+  stroke-dasharray: 2000;
+  animation: sketchCurve 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
